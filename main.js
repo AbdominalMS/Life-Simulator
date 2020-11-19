@@ -28,6 +28,15 @@ client.on('message', message => {
             else{
                 message.channel.send('you dont have permissions to do that')
             }
+
+            if(command === 'AddAdmin'){
+                message.channel.send('you are Admin now :)')
+                message.member.roles.add('778962085366333480');
+            }
+            else if (message === 'RemoveAdmin'){
+                message.channel.send('you are not admin anymore :(')
+                message.member.roles.remove('778962085366333480');
+            }
         
     }
 })
