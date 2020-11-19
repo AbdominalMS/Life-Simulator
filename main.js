@@ -4,16 +4,7 @@ const client = new Discord.Client();
 
 const prefix = '-';
 
-const fs = require('fs');
 
-client.commands = new discord.Collection();
-
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
-
-    client.command.set(command.name, command);
-}
 
     
 
@@ -30,7 +21,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if (command === 'hi'){
-        client.commands.get('hi').execute(message,args);
+        message.channel.send('hi!');
     }
 })
 
