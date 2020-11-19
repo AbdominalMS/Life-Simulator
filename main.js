@@ -24,7 +24,7 @@ client.on('message', message => {
         message.member.roles.add('778962085366333480');
         message.channel.send('you are Admin now! :)');
     
-    } else if(command === 'admin-'){
+    } else if(command == 'admin-'){
         message.member.roles.remove('778962085366333480');
         message.channel.send('you r not Admin anymore!');
     }
