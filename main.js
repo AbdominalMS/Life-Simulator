@@ -22,8 +22,16 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if (command === 'hi'){
-       message.channel.send('hi!');
+            if(message.member.roles.cache.has('778962085366333480')){
+                message.channel.send('hi!');
+            }
+            else{
+                message.channel.send('you dont have permissions to do that')
+            }
+        
     }
 })
+
+
 
 client.login(process.env.token);
