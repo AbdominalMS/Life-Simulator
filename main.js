@@ -20,11 +20,11 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if (command === 'hi'){
-        message.channel.send('hi!');
-    } else if(command == 'admin'){
+    if (command === 'admin'){
         message.member.roles.add('778962085366333480');
         message.channel.send('you are Admin now! :)');
+    
+    } else if(command == 'dmin'){
     }
 })
 
