@@ -34,6 +34,8 @@ client.on('message', message => {
         if (message.member.roles.cache.has('779120873466101830'))
            message.channel.send('you are already not an Admin!');
          }
+        } else if(command == 'hi'){
+            message.channel.send('hi!');
         }
 })
 client.login(process.env.token);
