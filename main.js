@@ -28,7 +28,8 @@ client.on('message', message => {
         {name: 'Rule2', value: 'Be nice'},
         {name: 'Rule3', value: 'Be nice'}
     ) 
-    .setImage('https://placekitten.com/200/300')
+    .setImage('https://www.google.com/search?q=Rules+image&sxsrf=ALeKk00o0l4IL6EdYlfUW_4yRJEZVrk49Q:1605877152126&tbm=isch&source=iu&ictx=1&fir=vr6B2BGb-wzU8M%252C8EFsFGDnL3nSyM%252C_&vet=1&usg=AI4_-kQRy4uiqPmR6kQpNuK3Pld8FwD2CQ&sa=X&ved=2ahUKEwiG6NHJlpHtAhWFQxUIHTbfDgsQ9QF6BAgLEFg#imgrc=vr6B2BGb-wzU8M')
+    
     .setFooter('plz follow the rules');
 
     if (command === 'admin'){
