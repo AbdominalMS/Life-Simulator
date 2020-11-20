@@ -14,7 +14,7 @@ client.once('ready', () => {
     console.log('im online');
 });
 
-client.on('message', message => {
+client.on('message', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -53,6 +53,13 @@ client.on('message', message => {
         } else if(command == 'rules'){
             message.channel.send(newEmbed);
 
+        } else if(command == 'reactions'){
+            const embed = new Discord.MessageEmbed()
+            .setTitle('Reactions Roles')
+            .setDescription('React to gain the role!')
+            .setColor('GREEN')
+            let msgEmbed = await message.channel.send(embed)
+            msgEmbed.react('😎')
         }
 
         
