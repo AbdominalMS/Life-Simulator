@@ -19,6 +19,17 @@ client.on('message', message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    const newEmbed = new Discord.MessageEmbed()
+    .setColor('#304281')
+    .setTitle('Rules')
+    .setDescription('this is server Rules')
+    .addFields(
+        {name: 'Rule1', value: 'Be nice'},
+        {name: 'Rule2', value: 'Be nice'},
+        {name: 'Rule3', value: 'Be nice'}
+    ) 
+    .setImage('https://placekitten.com/200/300')
+    .setFooter('plz follow the rules');
 
     if (command === 'admin'){
         if(message.member.roles.cache.has('779120873466101830')){
@@ -36,22 +47,12 @@ client.on('message', message => {
          }
         }  else if(command == 'hi'){
             message.channel.send('hi!'); 
+        } else if(command == 'embed'){
+            message.channel.send(newEmbed);
+
         }
-        const newEmbed = new Discord.MessageEmbed()
-        .setColor('#304281')
-        .setTitle('Rules')
-        .setDescription('this is server Rules')
-        .addFields(
-            {name: 'Rule1', value: 'Be nice'},
-            {name: 'Rule2', value: 'Be nice'},
-            {name: 'Rule3', value: 'Be nice'}
-        ) 
-        .setImage('https://placekitten.com/200/300')
-        .setFooter('plz follow the rules');
-         if(command === 'embed'){
-             message.channel.send(newEmbed);
+
         
-        }
     
 })
 
