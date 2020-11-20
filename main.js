@@ -37,5 +37,25 @@ client.on('message', message => {
         }  else if(command == 'hi'){
             message.channel.send('hi!'); 
         }
+        const newEmbed = new Discord.MessageEmbed()
+        .setColor('#304281')
+        .setTitle('Rules')
+        .setDescription('this is server Rules')
+        .addFields(
+            {name: 'Rule1', value: 'Be nice'},
+            {name: 'Rule2', value: 'Be nice'},
+            {name: 'Rule3', value: 'Be nice'}
+        ) 
+        .setImage('https://placekitten.com/200/300')
+        .setFooter('plz follow the rules');
+         if(command === 'embed'){
+             message.channel.send(newEmbed);
+        
+        }
+    
 })
+
+
+
+.setImage
 client.login(process.env.token);
