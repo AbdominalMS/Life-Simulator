@@ -68,9 +68,11 @@ client.on("messageReactionAdd", async (reaction,user) =>{
     if (reaction.message.channel.id === "779347935245893642"){
         if (reaction.emoji.name === '👦'){
             await reaction.message.guild.members.cache.get(user.id).roles.add("779361629367435264")
+        }
 
     }
-    client.on("messageReactionAdd", async (reaction,user) =>{
+})
+    client.on("messageReactionRemove", async (reaction,user) =>{
         if (reaction.message.partial) await reaction.message.fetch();
         if (user.bot) return;
         if (!reaction.message.guild) return;
@@ -79,7 +81,6 @@ client.on("messageReactionAdd", async (reaction,user) =>{
                 await reaction.message.guild.members.cache.get(user.id).roles.remove("779361629367435264")
             }
         }
-
-}
-})
+    }
+)
 client.login(process.env.token);
