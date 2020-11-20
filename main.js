@@ -29,9 +29,11 @@ client.on('message', message => {
         {name: 'Rule3', value: 'Be nice'}
     ) 
     .setImage('https://www.google.com/search?q=Rules+image&sxsrf=ALeKk00o0l4IL6EdYlfUW_4yRJEZVrk49Q:1605877152126&tbm=isch&source=iu&ictx=1&fir=vr6B2BGb-wzU8M%252C8EFsFGDnL3nSyM%252C_&vet=1&usg=AI4_-kQRy4uiqPmR6kQpNuK3Pld8FwD2CQ&sa=X&ved=2ahUKEwiG6NHJlpHtAhWFQxUIHTbfDgsQ9QF6BAgLEFg#imgrc=vr6B2BGb-wzU8M')
-
     .setFooter('plz follow the rules');
-
+    if(!args[0]) return message.reply("please enter the amount of messages that you want to clear!");
+    if(isNaN(args[0])) return message.reply("please enter a real number!");
+    if(args[0] > 100) return message.reply("you can not delete more than 100 message!");
+    if(args[0 < 1]) return message.reply("you must delete atleast one message!");
     if (command === 'admin'){
         if(message.member.roles.cache.has('779120873466101830')){
         message.member.roles.add('778962085366333480');
