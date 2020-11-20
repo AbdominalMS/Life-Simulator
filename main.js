@@ -53,6 +53,10 @@ client.on('message', async message => {
             .setTitle('Reactions Roles')
             .setDescription('React to gain the role!')
             .setColor('GREEN')
+            .addFields(
+                {name: 'Male', value: '👦'},
+                {name: 'Female', value: '👧'}
+            )
             let msgEmbed = await message.channel.send(embed)
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
