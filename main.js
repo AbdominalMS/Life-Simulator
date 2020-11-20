@@ -44,7 +44,7 @@ client.on('message', async message => {
            message.channel.send('you are already not an Admin!');
          }
         }  else if(command == 'hi'){
-            message.channel.send('hi!'); 
+            message.channel.send('hi!, how are you?'); 
         } else if(command == 'rules'){
             message.channel.send(newEmbed);
 
