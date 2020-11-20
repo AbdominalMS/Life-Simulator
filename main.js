@@ -54,7 +54,7 @@ client.on('message', async message => {
             .setDescription('React to gain the role!')
             .setColor('GREEN')
             let msgEmbed = await message.channel.send(embed)
-            msgEmbed.react('👦')
+            msgEmbed.react('👦','👧');
         }
 
         
