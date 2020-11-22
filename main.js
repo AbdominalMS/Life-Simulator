@@ -64,7 +64,7 @@ client.on('message', async message => {
             if (message.channel.id === "779994077436706826"){
                const chooseArr = ["🗻", "📰", "✂"];
           
-        const embed = new RichEmbed()
+        const embed = new MessageEmbed()
             .setColor("#ffffff")
             .setFooter(message.guild.me.displayName, client.user.displayAvatarURL)
             .setDescription("Add a reaction to one of these emojis to play the game!")
@@ -80,7 +80,7 @@ client.on('message', async message => {
         // Check if it's a win/tie/loss
         const result = await getResult(reacted, botChoice);
         // Clear the reactions
-        await m.clearReactions();
+        await m.reactions.removeAll()
 
         embed
             .setDescription("")
