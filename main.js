@@ -105,7 +105,7 @@ let comp_val = rps[parseInt(comp_res)];
             if (args[0] < 1)   return message.reply("you must delete atleast one message!")
             
             await message.channel.messages.fetch({limit: args[0]}).then(messages => {
-                message.channel.BulkDelete(messages);
+                message.channel.bulkDelete(messages);
             })
         }
         
