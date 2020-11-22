@@ -16,7 +16,7 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-   let args = message.content.substring(prefix.legnth).split(" ");
+    const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     const newEmbed = new Discord.MessageEmbed()
     .setColor('#304281')
