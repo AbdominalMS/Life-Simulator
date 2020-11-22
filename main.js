@@ -61,25 +61,25 @@ client.on('message', async message => {
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
         } else if (command == 'rps'){
-            if (message.channle.has('779994077436706826')){
-            if (!args[1]){
-                return message.channel.send('please include your choice');
-            }
+            if (message.channel.id('779994077436706826')){
+                if (!args[1]){
+                    return message.channel.send('please include your choice')
+                }
                 
-        let choices = ['rock', 'paper', 'scissors'];
-        if (choices.includes((args[1]).toLowerCase())){
-            let number = Math.floor(Math.random() * 3);
-            if (number == 1){
-                return.message.channel.send('it was a tie');
+                let choices = ['rock', 'paper', 'scissors'];
+                if (choices.includes((args[1]).toLowerCase())){
+                    let number = Math.floor(Math.random() * 3);
+                    if (number == 1){
+                        return message.channel.send('it was a tie')
+                    }
+                    if (number == 2){
+                        return message.channel.send('I Won!')
+                    }
+                    if (number == 0){
+                        return message.channel.send('You won')
+                    }
+                }
             }
-            if (number == 2){
-                return message.channel.send('I won');
-            }
-            if (number == 0){
-                return message.channel.send('you won');
-            }
-        }
-        }
         }
         
 })
