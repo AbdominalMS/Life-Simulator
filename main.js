@@ -62,23 +62,30 @@ client.on('message', async message => {
             msgEmbed.react('👧');
         } else if (command == 'rps'){
             if (message.channel.id === "779994077436706826"){
-                if (!args[1]){
-                    return message.channel.send('please include your choice')
-                }
-                
-                let choices = ['rock', 'paper', 'scissors'];
-                if (choices.includes((args[1]).toLowerCase())){
-                    let number = Math.floor(Math.random() * 3);
-                    if (number == 1){
-                        return message.channel.send('it was a tie')
-                    }
-                    if (number == 2){
-                        return message.channel.send('I Won!')
-                    }
-                    if (number == 0){
-                        return message.channel.send('You won')
-                    }
-                }
+               if (!args[1]) {
+    message.channel.send(
+        `Pick one (Rock, Paper, Scissors) and make sure to type it after ".rps" to play!`
+    );
+} else {
+    const choices = ["rock", "paper", "scissors"];
+    const computer = choices[Math.floor(Math.random() * choices.length)];
+    const player = args[1].toLowerCase();
+
+    var gameMsg;
+    if (choices.includes(player)) {
+        const choiceDict = { rock: 0, paper: 1, scissors: 2 };
+        const playerIdx = choiceDict[player];
+        const computerIdx = choiceDict[computer];
+
+        if (playerIdx == computerIdx) gameMsg = "It's a tie!";
+        if (computerIdx == playerIdx + 1 || computerIdx == playerIdx - 2)
+            gameMsg = "You lose..";
+        if (playerIdx == computerIdx + 1 || playerIdx == computerIdx - 2)
+            gameMsg = "You win!";
+
+        message.channel.send(`Player    : ${player}\nSANESS : ${computer}\n${gameMsg}`);
+    } else message.channel.send("Invalid Choice... Try again");
+}
             }
         }
         
