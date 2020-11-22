@@ -62,30 +62,48 @@ client.on('message', async message => {
             msgEmbed.react('👧');
         } else if (command == 'rps'){
             if (message.channel.id === "779994077436706826"){
-               if (!args[1]) {
-    message.channel.send(
-        `Pick one (Rock, Paper, Scissors) and make sure to type it after ".rps" to play!`
-    );
-} else {
-    const choices = ["rock", "paper", "scissors"];
-    const computer = choices[Math.floor(Math.random() * choices.length)];
-    const player = args[1].toLowerCase();
+               const chooseArr = ["🗻", "📰", "✂"];
+          
+        const embed = new RichEmbed()
+            .setColor("#ffffff")
+            .setFooter(message.guild.me.displayName, client.user.displayAvatarURL)
+            .setDescription("Add a reaction to one of these emojis to play the game!")
+            .setTimestamp();
 
-    var gameMsg;
-    if (choices.includes(player)) {
-        const choiceDict = { rock: 0, paper: 1, scissors: 2 };
-        const playerIdx = choiceDict[player];
-        const computerIdx = choiceDict[computer];
+        const m = await message.channel.send(embed);
+        // Wait for a reaction to be added
+        const reacted = await promptMessage(m, message.author, 30, chooseArr);
 
-        if (playerIdx == computerIdx) gameMsg = "It's a tie!";
-        if (computerIdx == playerIdx + 1 || computerIdx == playerIdx - 2)
-            gameMsg = "You lose..";
-        if (playerIdx == computerIdx + 1 || playerIdx == computerIdx - 2)
-            gameMsg = "You win!";
+        // Get a random emoji from the array
+        const botChoice = chooseArr[Math.floor(Math.random() * chooseArr.length)];
 
-        message.channel.send(`Player    : ${player}\nSANESS : ${computer}\n${gameMsg}`);
-    } else message.channel.send("Invalid Choice... Try again");
-}
+        // Check if it's a win/tie/loss
+        const result = await getResult(reacted, botChoice);
+        // Clear the reactions
+        await m.clearReactions();
+
+        embed
+            .setDescription("")
+            .addField(result, `${reacted} vs ${botChoice}`);
+
+        m.edit(embed);
+
+        function getResult(me, clientChosen) {
+            if ((me === "🗻" && clientChosen === "✂") ||
+                (me === "📰" && clientChosen === "🗻") ||
+                (me === "✂" && clientChosen === "📰")) {
+                    return "You won!";
+            } else if (me === clientChosen) {
+                return "It's a tie!";
+            } else {
+                return "You lost!";
+            }
+        }
+            }
+        }
+       
+   
+
             }
         } else if (command == 'args'){
             if (!args.length) {
