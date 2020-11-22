@@ -62,48 +62,37 @@ client.on('message', async message => {
             msgEmbed.react('👧');
         } else if (command == 'rps'){
             if (message.channel.id === "779994077436706826"){
-               const chooseArr = ["🗻", "📰", "✂"];
-          
-        const embed = new MessageEmbed()
-            .setColor("#ffffff")
-            .setFooter(message.guild.me.displayName, client.user.displayAvatarURL)
-            .setDescription("Add a reaction to one of these emojis to play the game!")
-            .setTimestamp();
-
-        const m = await message.channel.send(embed);
-        // Wait for a reaction to be added
-        const reacted = await promptMessage(m, message.author, 30, chooseArr);
-
-        // Get a random emoji from the array
-        const botChoice = chooseArr[Math.floor(Math.random() * chooseArr.length)];
-
-        // Check if it's a win/tie/loss
-        const result = await getResult(reacted, botChoice);
-        // Clear the reactions
-        await m.reactions.removeAll()
-
-        embed
-            .setDescription("")
-            .addField(result, `${reacted} vs ${botChoice}`);
-
-        m.edit(embed);
-
-        function getResult(me, clientChosen) {
-            if ((me === "🗻" && clientChosen === "✂") ||
-                (me === "📰" && clientChosen === "🗻") ||
-                (me === "✂" && clientChosen === "📰")) {
-                    return "You won!";
-            } else if (me === clientChosen) {
-                return "It's a tie!";
-            } else {
-                return "You lost!";
-            }
-        }
+              let rps = ["scissors", "paper", "rock"];
+let i;
+if(!rps.includes(args[0])) return message.reply("Please choose rock, paper or scissor.");
+if(args[0].includes("rock")) {
+i = 2;
+}
+if(args[0].includes("paper")) {
+i = 1;
+}
+if(args[0].includes("scissors")) {
+i = 0;
+}
+if(rps[i]) {
+let comp = Math.floor((Math.random() * 3) + 1);
+let comp_res = parseInt(comp) - parseInt("1");
+let comp_val = rps[parseInt(comp_res)];
+  if(i === comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and we tied, wanna try again?`); 
+  }
+  if(i > comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and I won! Well played.`);
+  } 
+  if(i < comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and I lost! Congrats on winning!`);
+  }
+}
             }
         }
        
    
-           else if (command == 'args'){
+ else if (command == 'args'){
             if (!args.length) {
                 return message.channel.send(`you have not input any arguments, ${message.author}!`)
             }
