@@ -87,6 +87,12 @@ client.on('message', async message => {
     } else message.channel.send("Invalid Choice... Try again");
 }
             }
+        } else if (command == 'args'){
+            if (!args.length) {
+                return message.channel.send(`you have not input any arguments, ${message.author}!`)
+            }
+            
+            message.channel.send(`command name: ${command}\nArguments: ${args}`)
         }
         
 })
