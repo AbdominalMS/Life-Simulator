@@ -96,10 +96,12 @@ if (number == 0){
         return message.channel.send('you won, I had paper')
     }
 }    
+}
+    
  else {
 return message.channel.send('please include either: Rock, Paper, Scissors.')
 }
-        }
+        
             }
         }
 
