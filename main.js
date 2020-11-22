@@ -16,7 +16,7 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+   let args = message.content.substring(prefix.legnth).split(" ");
     const command = args.shift().toLowerCase();
     const newEmbed = new Discord.MessageEmbed()
     .setColor('#304281')
@@ -67,7 +67,6 @@ return message.channel.send('please include your choice!')
 }
 
 let choices = ['rock', 'paper', 'scissors'];
-                
                 
 if (choices.includes((args[1]).toLowerCase())){
 let number = Math.floor(Math.random() * 3);
