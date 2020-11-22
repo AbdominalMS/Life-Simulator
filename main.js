@@ -61,51 +61,27 @@ client.on('message', async message => {
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
         } else if (command == 'rps'){
-            if (message.channel.id === "779994077436706826"){
-if (!args[1]){
-return message.channel.send('please include your choice!')
-}
-
-let choices = ['rock', 'paper', 'scissors'];
+            if (message.channle.has('779994077436706826')){
+            if (!args[1]){
+                return message.channel.send('please include your choice');
+            }
                 
-if (choices.includes((args[1]).toLowerCase())){
-let number = Math.floor(Math.random() * 3);
-if (number == 1){
-return message.channel.send('it was a tie, we both had ' + (args[1]).toLowerCase())
-}
-if (number == 2) {
-   if ((args[1]).toLowerCase() == "rock"){
-       return message.channel.send('I won, I had paper')
-   }
-    if ((args[1]).toLowerCase == "paper"){
-        return message.channel.send('I won, I had scissors')
-    }
-    if ((args[1]).toLowerCase == "scissors"){
-        message.channel.send('I won, I had rock')
-    }
-}
-if (number == 0){
-    if ((args[1]).toLowerCase() == "rock"){
-        return message.channel.send('you won, I had scissors')
-    }
-    if ((args[1]).toLowerCase() == "paper"){
-        return message.channel.send('you won, I had rock')
-    }
-    if ((args[1]).toLowerCase() == "scissors"){
-        return message.channel.send('you won, I had paper')
-    }
-}    
-}
-    
- else {
-return message.channel.send('please include either: Rock, Paper, Scissors.')
-}
-        
+        let choices = ['rock', 'paper', 'scissors'];
+        if (choices.includes((args[1]).toLowerCase())){
+            let number = Math.floor(Math.random() * 3);
+            if (number == 1){
+                return.message.channel.send('it was a tie');
+            }
+            if (number == 2){
+                return message.channel.send('I won');
+            }
+            if (number == 0){
+                return message.channel.send('you won');
             }
         }
-
+        }
+        }
         
-    
 })
 
 client.on("messageReactionAdd", async (reaction,user) =>{
