@@ -99,7 +99,8 @@ if (number == 0){
  else {
 return message.channel.send('please include either: Rock, Paper, Scissors.')
 }
-}
+        }
+            }
         }
 
         
