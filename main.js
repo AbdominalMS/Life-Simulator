@@ -103,8 +103,7 @@ client.on('message', async message => {
         }
        
    
-
-        } else if (command == 'args'){
+           else if (command == 'args'){
             if (!args.length) {
                 return message.channel.send(`you have not input any arguments, ${message.author}!`)
             }
