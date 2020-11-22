@@ -61,7 +61,7 @@ client.on('message', async message => {
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
         } else if (command == 'rps'){
-            if (message.channel.id('779994077436706826')){
+            if (message.channel.id === "779994077436706826"){
                 if (!args[1]){
                     return message.channel.send('please include your choice')
                 }
