@@ -105,8 +105,13 @@ let comp_val = rps[parseInt(comp_res)];
                 message.channel.bulkDelete(messages);
             })
             }
-        } else if (command == 'love you bot'){
-            message.channel.send('love you too :3')
+        } else if (command == 'love'){
+            if(args[0] === 'you'){
+                if(args[1] === 'bot'){
+                    message.channel.reply('love u too!!')
+                }
+                
+            }
         }
         
        
