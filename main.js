@@ -105,6 +105,8 @@ let comp_val = rps[parseInt(comp_res)];
                 message.channel.bulkDelete(messages);
             })
             }
+        } else if (command == 'love you bot'){
+            message.channel.send('love you too :3')
         }
         
        
