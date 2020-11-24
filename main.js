@@ -61,7 +61,7 @@ client.on('message', async message => {
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
         } else if (command == 'rps'){
-            if (message.channel.id === "779994077436706826"){
+            
               let rps = ["scissors", "paper", "rock"];
 let i;
 if(!rps.includes(args[0])) return message.reply("Please choose rock, paper or scissor.");
@@ -89,7 +89,8 @@ let comp_val = rps[parseInt(comp_res)];
   }
 }
             }
-        }
+            
+        
        
    
  else if (command == 'args'){
