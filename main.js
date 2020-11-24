@@ -31,7 +31,7 @@ client.on('message', async message => {
     .setImage('https://www.google.com/search?q=Rules+image&sxsrf=ALeKk00o0l4IL6EdYlfUW_4yRJEZVrk49Q:1605877152126&tbm=isch&source=iu&ictx=1&fir=vr6B2BGb-wzU8M%252C8EFsFGDnL3nSyM%252C_&vet=1&usg=AI4_-kQRy4uiqPmR6kQpNuK3Pld8FwD2CQ&sa=X&ved=2ahUKEwiG6NHJlpHtAhWFQxUIHTbfDgsQ9QF6BAgLEFg#imgrc=vr6B2BGb-wzU8M')
     .setFooter('plz follow the rules');
    
-        }  else if(command == 'hi'){
+           if (command === 'hi'){
             message.channel.send('hi!'); 
         } else if(command == 'rules'){
             message.channel.send(newEmbed);
