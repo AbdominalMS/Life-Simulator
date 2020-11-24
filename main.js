@@ -96,7 +96,7 @@ let comp_val = rps[parseInt(comp_res)];
             }
             
         }  else if (command == 'clear'){ 
-            if (GuildMember.hasPermission('ADMINISTRATOR')){
+            if (message.member.hasPermission('ADMINISTRATOR')){
             if(!args[0]) return message.channel.reply("please Enter the amout of messages that you want to clear")
             if(isNaN(args[0])) return message.reply("please Enter a real number")
             if (args[0] > 100) return message.reply("you can't delete more than 100 messages!")
