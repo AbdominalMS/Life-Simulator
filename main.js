@@ -106,7 +106,7 @@ let comp_val = rps[parseInt(comp_res)];
             })
             }
         } else if (command == 'loveyoubot'){
-            message.channel.reply('love you too!')
+            message.channel.send('love you too!')
         }
         
         
