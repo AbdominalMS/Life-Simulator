@@ -107,6 +107,12 @@ let comp_val = rps[parseInt(comp_res)];
             }
         } else if (command == 'loveyoubot'){
             message.channel.send('love you too!')
+        } else if (command == 'love'){
+            if (args[0] === 'you'){
+                if (args[1] == 'bot'){
+                    message.channel.send('love you too!')
+                }
+            }
         }
         
         
