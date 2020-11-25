@@ -80,7 +80,7 @@ let comp_val = rps[parseInt(comp_res)];
             const { member, mentions } = postMessage
             const tag = `<@${member.id}>`
             
-            if (member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
+            if (message.member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
                 const target = mentions.users.first()
                 if (target){
                     const targetMember = message.guild.members.cache.get(target.id)
