@@ -77,23 +77,81 @@ let comp_val = rps[parseInt(comp_res)];
   }
 }
         } else if (command == 'kick'){
-           if(!message.member.hasPermission("KICK_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permissions')
-            let user = message.mentions.users.first();
-            
-            let member = message.guild.member(user);
-            let reason = args.slice(1).join(" ");
-            
-            if(!user) return message.channel.send("please mention the user");
-            if(user.id === message.author.id) return message.channel.send("you cant kick yourself");
-            if(user.id === client.user.id) return message.channel.send("you can't kick me")
-            if(!reason) reason = "No reason specified"
-            
-            member.kick(reason).then(() => {
-                message.channel.send(`successfuly kicked ${user.tag}`);
-            }).catch(err => {
-                message.reply("I was unable to kick the member.");
-            })
+           let kicked = message.mentions.users.first() || client.users.resolve(args[0]);
+    let reason = args.slice(1).join(" ");
+  
+    // MESSAGES
+  
+    if (!kicked) {
+      let kickinfoembed = new Discord.MessageEmbed()
+        .setTitle("Command: kick")
+        .setDescription(
+          `**Description:** Kick a member. \n` +
+            "**Sub Commands:**\n" +
+            "\n" +
+            "**Usage:**\n" +
+            "-kick [user] (reason) \n" +
+            "**Examples:** \n" +
+            "-kick <@597253939469221891> spam"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(kickinfoembed);
+  
+      return;
     }
+  
+    if (message.author === kicked) {
+      let sanctionyourselfembed = new Discord.MessageEmbed()
+        .setDescription(`You cannot sanction yourself`)
+        .setColor("#2C2F33");
+      message.channel.send(sanctionyourselfembed);
+  
+      return;
+    }
+  
+    if (!reason) {
+      let noreasonembed = new Discord.MessageEmbed()
+        .setDescription(`Enter a reason`)
+        .setColor("#2C2F33");
+      message.channel.send(noreasonembed);
+  
+      return;
+    }
+  
+    if (!message.member.permissions.has("KICK_MEMBERS")) {
+      let nopermsembed = new Discord.MessageEmbed()
+        .setDescription(
+          "You do not have permission `KICK MEMBERS` contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(nopermsembed);
+  
+      return;
+    }
+  
+    if (!message.guild.me.permissions.has("KICK_MEMBERS")) {
+      let botnopermsembed = new Discord.MessageEmbed()
+        .setDescription(
+          "I do not have `KICK MEMBERS` permission, please contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(botnopermsembed);
+  
+      return;
+    }
+  
+    message.guild.member(kicked).kick(reason);
+  
+    let successfullyembed = new Discord.MessageEmbed()
+      .setDescription(`${kicked.tag} has been successfully kicked.`)
+      .setColor("#2C2F33");
+  
+    message.channel.send(successfullyembed);
+
+  }
+
+
+    
       else if (command == 'ban'){
                      if(!message.member.hasPermission("BAN_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permissions')
             let user = message.mentions.users.first();
