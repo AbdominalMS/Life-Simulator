@@ -93,9 +93,9 @@ let comp_val = rps[parseInt(comp_res)];
 
         if(!reason) reason = 'Unspecified';
 
-        guildMember.ban({ days: 7, reason: 'They deserved it' })
-  .then(console.log)
-  .catch(console.error);
+        member.ban(`${reason}`).catch(err => { 
+          message.channel.send('Something went wrong')
+            console.log(err)
         })
 
         const banembed = new Discord.MessageEmbed()
