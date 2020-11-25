@@ -94,6 +94,24 @@ let comp_val = rps[parseInt(comp_res)];
                 message.reply("I was unable to kick the member.");
             })
     }
+      else if (command == 'ban'){
+                     if(!message.member.hasPermission("BAN_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permissions')
+            let user = message.mentions.users.first();
+            
+            let member = message.guild.member(user);
+            let reason = args.slice(1).join(" ");
+            
+            if(!user) return message.channel.send("please mention the user");
+            if(user.id === message.author.id) return message.channel.send("you cant ban yourself");
+            if(user.id === client.user.id) return message.channel.send("you can't ban me")
+            if(!reason) reason = "No reason specified"
+            
+            member.ban(reason).then(() => {
+                message.channel.send(`successfuly banned ${user.tag}`);
+            }).catch(err => {
+                message.reply("I was unable to ban the member.");
+            })
+      }
 
             
          else if (command == 'clear'){ 
