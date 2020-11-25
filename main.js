@@ -94,9 +94,9 @@ let comp_val = rps[parseInt(comp_res)];
                 message.reply("I was unable to kick the member.");
             })
     }
-}
+
             
-        }  else if (command == 'clear'){ 
+         else if (command == 'clear'){ 
             if (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_ROLES ')){
             if(!args[0]) return message.channel.reply("please Enter the amout of messages that you want to clear")
             if(isNaN(args[0])) return message.reply("please Enter a real number")
