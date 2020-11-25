@@ -140,7 +140,7 @@ let comp_val = rps[parseInt(comp_res)];
       return;
     }
   
-    message.guild.member(kicked).kick(reason);
+    message.guild.member.kick(kicked)(reason);
   
     let successfullyembed = new Discord.MessageEmbed()
       .setDescription(`${kicked.tag} has been successfully kicked.`)
