@@ -3,9 +3,7 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 
 const prefix = '!-';
 
-const { Player } = require("discord-player");
-const player = new Player(client);
-client.player = player;
+
 
     
 
@@ -130,14 +128,7 @@ let comp_val = rps[parseInt(comp_res)];
                     message.channel.send('love you too!')
                 }
             }
-        } else if (command == 'play'){
-            let track = await client.player.play(message.member.voice.channel, args[0], message.member.user.tag);
-            message.channel.send(`currently playing ${track.name}! -Requested by ${track.requestedBy}`);
-        } else if (command == 'stop'){
-            let track = await client.player.stop(message.guild.id);
-            message.channel.send(`stopped`)
         }
-    
         
         
        
