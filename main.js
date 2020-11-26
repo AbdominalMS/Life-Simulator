@@ -77,77 +77,42 @@ let comp_val = rps[parseInt(comp_res)];
   }
 }
         } else if (command == 'kick'){
-           let kicked = message.mentions.users.first() || client.users.resolve(args[0]);
-    let reason = args.slice(1).join(" ");
-  
-    // MESSAGES
-  
-    if (!kicked) {
-      let kickinfoembed = new Discord.MessageEmbed()
-        .setTitle("Command: kick")
-        .setDescription(
-          `**Description:** Kick a member. \n` +
-            "**Sub Commands:**\n" +
-            "\n" +
-            "**Usage:**\n" +
-            "-kick [user] (reason) \n" +
-            "**Examples:** \n" +
-            "-kick <@597253939469221891> spam"
-        )
-        .setColor("#2C2F33");
-      message.channel.send(kickinfoembed);
-  
-      return;
+           // Assuming we mention someone in the message, this will return the user
+    // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+    const user = message.mentions.users.first();
+    // If we have a user mentioned
+    if (user) {
+      // Now we get the member from the user
+      const member = message.guild.members.resolve(user);
+      // If the member is in the guild
+      if (member) {
+        /**
+         * Kick the member
+         * Make sure you run this on a member, not a user!
+         * There are big differences between a user and a member
+         */
+        member
+          .kick('Optional reason that will display in the audit logs')
+          .then(() => {
+            // We let the message author know we were able to kick the person
+            message.reply(`Successfully kicked ${user.tag}`);
+          })
+          .catch(err => {
+            // An error happened
+            // This is generally due to the bot not being able to kick the member,
+            // either due to missing permissions or role hierarchy
+            message.reply('I was unable to kick the member');
+            // Log the error
+            console.error(err);
+          });
+      } else {
+        // The mentioned user isn't in this guild
+        message.reply("That user isn't in this guild!");
+      }
+      // Otherwise, if no user was mentioned
+    } else {
+      message.reply("You didn't mention the user to kick!");
     }
-  
-    if (message.author === kicked) {
-      let sanctionyourselfembed = new Discord.MessageEmbed()
-        .setDescription(`You cannot sanction yourself`)
-        .setColor("#2C2F33");
-      message.channel.send(sanctionyourselfembed);
-  
-      return;
-    }
-  
-    if (!reason) {
-      let noreasonembed = new Discord.MessageEmbed()
-        .setDescription(`Enter a reason`)
-        .setColor("#2C2F33");
-      message.channel.send(noreasonembed);
-  
-      return;
-    }
-  
-    if (!message.member.permissions.has("KICK_MEMBERS")) {
-      let nopermsembed = new Discord.MessageEmbed()
-        .setDescription(
-          "You do not have permission `KICK MEMBERS` contact an administrator"
-        )
-        .setColor("#2C2F33");
-      message.channel.send(nopermsembed);
-  
-      return;
-    }
-  
-    if (!message.guild.me.permissions.has("KICK_MEMBERS")) {
-      let botnopermsembed = new Discord.MessageEmbed()
-        .setDescription(
-          "I do not have `KICK MEMBERS` permission, please contact an administrator"
-        )
-        .setColor("#2C2F33");
-      message.channel.send(botnopermsembed);
-  
-      return;
-    }
-  
-    message.guild.member.kick(kicked)(reason);
-  
-    let successfullyembed = new Discord.MessageEmbed()
-      .setDescription(`${kicked.tag} has been successfully kicked.`)
-      .setColor("#2C2F33");
-  
-    message.channel.send(successfullyembed);
-
   }
 
 
