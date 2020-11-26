@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
 const prefix = '!-';
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 const { Player } = require("discord-player");
 const player = new Player(client);
@@ -36,34 +32,9 @@ client.on('message', async message => {
     ) 
     .setImage('https://www.google.com/search?q=Rules+image&sxsrf=ALeKk00o0l4IL6EdYlfUW_4yRJEZVrk49Q:1605877152126&tbm=isch&source=iu&ictx=1&fir=vr6B2BGb-wzU8M%252C8EFsFGDnL3nSyM%252C_&vet=1&usg=AI4_-kQRy4uiqPmR6kQpNuK3Pld8FwD2CQ&sa=X&ved=2ahUKEwiG6NHJlpHtAhWFQxUIHTbfDgsQ9QF6BAgLEFg#imgrc=vr6B2BGb-wzU8M')
     .setFooter('plz follow the rules');
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-    if (command === 'admin'){
-        if(message.member.roles.cache.has('779120873466101830')){
-        message.member.roles.add('778962085366333480');
-        message.channel.send('you are Admin now! :)');
-        } if(message.member.roles.cache.has('778962085366333480')){
-            message.channel.send('you already have an Admin');
-        }
-     } else if(command == 'admin-'){
-         if(message.member.roles.cache.has('778962085366333480')){
-        message.member.roles.remove('778962085366333480');
-        message.channel.send('you are not Admin anymore!');
-        if (message.member.roles.cache.has('779120873466101830'))
-           message.channel.send('you are already not an Admin!');
-         }
-        }  else if(command == 'hi'){
-            message.channel.send('hi!, how are you?'); 
-=======
    
            if (command === 'hi'){
             message.channel.send('hi!'); 
->>>>>>> 028fc7abdb9a5fac922d5cd62be80d23d0ec2c54
-=======
-   
-           if (command === 'hi'){
-            message.channel.send('hi!'); 
->>>>>>> Stashed changes
         } else if(command == 'rules'){
             message.channel.send(newEmbed);
 
@@ -159,11 +130,6 @@ let comp_val = rps[parseInt(comp_res)];
                     message.channel.send('love you too!')
                 }
             }
-<<<<<<< Updated upstream
-        }
-        
-        
-=======
         } else if (command == 'play'){
             let track = await client.player.play(message.member.voice.channel, args[0], message.member.user.tag);
             message.channel.send(`currently playing ${track.name}! -Requested by ${track.requestedBy}`);
@@ -174,7 +140,6 @@ let comp_val = rps[parseInt(comp_res)];
     
         
         
->>>>>>> Stashed changes
        
    
  
