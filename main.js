@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
-const prefix = '-';
+const prefix = '!-';
 
 
 
@@ -16,8 +16,9 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
+    
     const newEmbed = new Discord.MessageEmbed()
     .setColor('#304281')
     .setTitle('Rules')
@@ -29,6 +30,7 @@ client.on('message', async message => {
     ) 
     .setImage('https://www.google.com/search?q=Rules+image&sxsrf=ALeKk00o0l4IL6EdYlfUW_4yRJEZVrk49Q:1605877152126&tbm=isch&source=iu&ictx=1&fir=vr6B2BGb-wzU8M%252C8EFsFGDnL3nSyM%252C_&vet=1&usg=AI4_-kQRy4uiqPmR6kQpNuK3Pld8FwD2CQ&sa=X&ved=2ahUKEwiG6NHJlpHtAhWFQxUIHTbfDgsQ9QF6BAgLEFg#imgrc=vr6B2BGb-wzU8M')
     .setFooter('plz follow the rules');
+<<<<<<< HEAD
     if (command === 'admin'){
         if(message.member.roles.cache.has('779120873466101830')){
         message.member.roles.add('778962085366333480');
@@ -45,6 +47,11 @@ client.on('message', async message => {
          }
         }  else if(command == 'hi'){
             message.channel.send('hi!, how are you?'); 
+=======
+   
+           if (command === 'hi'){
+            message.channel.send('hi!'); 
+>>>>>>> 028fc7abdb9a5fac922d5cd62be80d23d0ec2c54
         } else if(command == 'rules'){
             message.channel.send(newEmbed);
 
@@ -60,10 +67,94 @@ client.on('message', async message => {
             let msgEmbed = await message.channel.send(embed)
             msgEmbed.react('👦',);
             msgEmbed.react('👧');
-        }
-
-        
+        } else if (command == 'rps'){
+            
+              let rps = ["scissors", "paper", "rock"];
+let i;
+if(!rps.includes(args[0])) return message.reply("Please choose rock, paper or scissor.");
+if(args[0].includes("rock")) {
+i = 2;
+}
+if(args[0].includes("paper")) {
+i = 1;
+}
+if(args[0].includes("scissors")) {
+i = 0;
+}
+if(rps[i]) {
+let comp = Math.floor((Math.random() * 3) + 1);
+let comp_res = parseInt(comp) - parseInt("1");
+let comp_val = rps[parseInt(comp_res)];
+  if(i === comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and we tied, wanna try again?`); 
+  }
+  if(i > comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and I won! Well played.`);
+  } 
+  if(i < comp_res) {
+    return message.channel.send(`You chose **${args[0]}** and I chose **${comp_val}** and I lost! Congrats on winning!`);
+  }
+}
+        } else if (command == 'kick'){
+            if(message.member.hasPermission("KICK_MEMBERS")){
+      // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // Kick
+        member.kick().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+            }
+    }
     
+      else if (command == 'ban'){
+                     if(!message.member.hasPermission("BAN_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('you dont have permissions')
+            let user = message.mentions.users.first();
+            
+            let member = message.guild.member(user);
+            let reason = args.slice(1).join(" ");
+            
+            if(!user) return message.channel.send("please mention the user");
+            if(user.id === message.author.id) return message.channel.send("you cant ban yourself");
+            if(user.id === client.user.id) return message.channel.send("you can't ban me")
+            if(!reason) reason = "No reason specified"
+            
+            member.ban(reason).then(() => {
+                message.channel.send(`successfuly banned ${user.tag}`);
+            }).catch(err => {
+                message.reply("I was unable to ban the member.");
+            })
+      }
+
+            
+         else if (command == 'clear'){ 
+            if (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_ROLES ')){
+            if(!args[0]) return message.channel.reply("please Enter the amout of messages that you want to clear")
+            if(isNaN(args[0])) return message.reply("please Enter a real number")
+            if (args[0] > 100) return message.reply("you can't delete more than 100 messages!")
+            if (args[0] < 1)   return message.reply("you must delete atleast one message!")
+            await message.channel.messages.fetch({limit: args[0]}).then(messages => {
+                message.channel.bulkDelete(messages);
+            })
+            }
+        } 
+          else if (command == 'love'){
+            if (args[0] === 'you'){
+                if (args[1] == 'bot'){
+                    message.channel.send('love you too!')
+                }
+            }
+        }
+        
+        
+       
+   
+ 
+    
+        
 })
 
 client.on("messageReactionAdd", async (reaction,user) =>{
