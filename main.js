@@ -132,7 +132,10 @@ let comp_val = rps[parseInt(comp_res)];
                else if (command == 'how'){
                    if (args[0] === 'are' || args[0] === 'r'){
                        if (args[1] == 'you' || args[1] == 'you?'){
-                           message.channel.send("i'm good, what about you?");
+                           let replies = ["i'm good","i'm fine","i'm ok"]
+                           let random = Math.floor(Math.random() * 3);
+                           
+                           message.channel.send(`${replies[random]},what about you?`)
                        }
                    }
                } else if (command == 'sosasosi'){
@@ -144,7 +147,7 @@ let comp_val = rps[parseInt(comp_res)];
                } else if (command == 'no' || command == 'no!'){
                    message.channel.send('yes');
                } else if (command == 'good'){
-                   let replies = ["what is ur fav cake?", "How are you?", "what is ur favourite color?"];
+                   let replies = ["what is ur fav cake?", "how is ur day?", "what is ur favourite color?"];
                    let random = Math.floor(Math.random() * 3);
                    
                    message.channel.send(replies[random]);
