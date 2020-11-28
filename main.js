@@ -139,6 +139,10 @@ let comp_val = rps[parseInt(comp_res)];
                    message.channel.send('sosasosi!!!');
                } else if (command == 'bad'){
                    message.channel.send('oh,why?');
+               } else if (command == 'yes'){
+                   message.channel.send('no!')
+               } else if (command == 'no'){
+                   message.channel.send('yes');
                }
         
         
