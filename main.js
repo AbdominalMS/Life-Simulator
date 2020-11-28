@@ -123,12 +123,19 @@ let comp_val = rps[parseInt(comp_res)];
             }
         } 
           else if (command == 'love'){
-            if (args[0] === 'you'){
+            if (args[0] === 'you' || args[0] === 'u'){
                 if (args[1] == 'bot'){
                     message.channel.send('love you too!')
                 }
             }
         }
+               else if (command == 'how'){
+                   if (args[0] === 'are' || args[0] === 'r'){
+                       if (args[1] == 'you' || args[1] == 'you?'){
+                           message.channel.send("i'm good, what about you?");
+                       }
+                   }
+               }
         
         
        
