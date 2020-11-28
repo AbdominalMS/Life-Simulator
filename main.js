@@ -151,7 +151,21 @@ let comp_val = rps[parseInt(comp_res)];
                    let random = Math.floor(Math.random() * 3);
                    
                    message.channel.send(replies[random]);
+                   
+                  
                }
+                else if (command == 'fav'){
+                    let replies = ["omg, i love it too!", "oh, i like it too!", "oh i don't like it ;-;"];
+                    let random = Math.floor(Math.random() * 3);
+                    if (args[0] === 'cake'){
+                        message.channel.send(replies[random]);
+                    }
+                    else if (args[0] == 'color'){
+                        message.channel.send(replies[random]);
+                    }
+                }
+    
+    
         
         
        
