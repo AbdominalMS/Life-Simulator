@@ -143,6 +143,11 @@ let comp_val = rps[parseInt(comp_res)];
                    message.channel.send('no!')
                } else if (command == 'no' || command == 'no!'){
                    message.channel.send('yes');
+               } else if (command == 'good'){
+                   let replies = ["what is ur fav cake?", "How are you?", "what is ur favourite color?"];
+                   let random = Math.floor(Math.random() * 3);
+                   
+                   message.channel.send(replies[random]);
                }
         
         
