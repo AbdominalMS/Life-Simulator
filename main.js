@@ -6,6 +6,8 @@ const prefix = '!-';
 
 
     
+const fs = require("fs");
+client.msgs = require("./msgs.json");
 
 
 
@@ -176,9 +178,25 @@ let comp_val = rps[parseInt(comp_res)];
                     }
                     else if (args[0] != numbers[random]){
                         message.channel.send(`wrong number it was ${numbers[random]}`);
-                    }
+                    } 
                     
+                } else if (command == 'write'){
+                    editedmessage = message.content.slice (6);
+                    
+                    client.msgs [message.author.username] = {
+                        message: editedmessage
+                    }
+                    fs.writeFile ("./msgs.json", JSON.stringfy (client.msgs, null, 4), err =>{
+                        if (err) throw err;
+                        message.channel.send("message written");
+                        
+                    });
+                    
+                } else if (command == 'get'){
+                    let _message = client.msgs[message.author.username].message;
+                    message.channel.send("message is:" + _message);
                 }
+    
     
     
     
