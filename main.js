@@ -194,8 +194,14 @@ let comp_val = rps[parseInt(comp_res)];
                     
                 } else if (command == 'get'){
                     let _message = client.msgs[message.author.username].message;
-                    
-                    message.channel.send("message is :" + _message);
+                     const newEmbed = new Discord.MessageEmbed()
+    .setColor('#304281')
+    .setTitle('Note')
+    .setDescription('this is your text')
+    .addFields(
+        {name: 'message is:', value: _message}
+    ) 
+                    message.channel.send(newEmbed);
                 }
     
     
