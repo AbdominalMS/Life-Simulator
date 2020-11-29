@@ -4,7 +4,7 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 const prefix = '!-';
 
 
-const mathion = require('mathion');
+
     
 
 
