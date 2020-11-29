@@ -198,7 +198,7 @@ let comp_val = rps[parseInt(comp_res)];
                     .setColor('#304281')
                     .setTitle('Note')
                     .addFields(
-                    {name: "message is:", value: `${_message}`}
+                    {name: "message is:", value: _message}
                     )
                     message.channel.send(newEmbed);
                 }
