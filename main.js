@@ -181,7 +181,7 @@ let comp_val = rps[parseInt(comp_res)];
                     } 
                     
                 } else if (command == 'write'){
-                    editedmessage = message.content.slice (6);
+                    editedmessage = message.content.slice (7);
                     
                     client.msgs [message.author.username] = {
                         message: editedmessage
