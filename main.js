@@ -4,7 +4,7 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 const prefix = '!-';
 
 
-
+const mathion = require('mathion');
     
 
 
@@ -163,7 +163,18 @@ let comp_val = rps[parseInt(comp_res)];
                     else if (args[0] == 'color'){
                         message.channel.send(replies[random]);
                     }
+                } else if (command == 'game'){
+                    message.channel.send('which game you want to play /n only 1 game available now type !-guess and a number')
+                } else if (command == 'guess'){
+                    const number = mathion.createRand("1","10")
+                    if (args[0] === number){
+                        message.channel.send(`you won it was ${number}`)
+                    }
+                    else {
+                        message.channel.send(`you lose, it was ${number}`)
+                    }
                 }
+    
     
     
         
