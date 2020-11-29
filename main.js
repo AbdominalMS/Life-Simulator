@@ -166,7 +166,17 @@ let comp_val = rps[parseInt(comp_res)];
                         message.channel.send(replies[random]);
                     }
                 } else if (command == 'game'){
-                    message.channel.send('which game you want to play /n only 1 game available now type !-guess and a number from 1 to 10')
+                    const newEmbed = new Discord.MessageEmbed()
+                    .setColor('#304281')
+                    .setTitle('Games')
+                    .setDescription('choose a game')
+                    .addFields(
+                        {name: 'Game1',value 'RPS'},
+                        {name: 'Game2', value 'Guess'}
+                    )
+                    .setFooter('if u want to know how ro use games command type !-help <command>')
+                    message.channel.send(newEmbed);
+                    
                 } else if (command == 'guess'){
                     let numbers = ["1","2","3","4","5","6","7","8","9","10"];
                     let random = Math.floor(Math.random() * numbers.length);
@@ -202,6 +212,24 @@ let comp_val = rps[parseInt(comp_res)];
         {name: 'message is:', value: _message}
     ) 
                     message.channel.send(newEmbed);
+                }  else if (command == 'help'){
+                    if (args[0] == 'rps'){
+                        const newEmbed = new Discord.MessageEmbed()
+                        .setColor('#304281')
+                        .addFields(
+                    {name: 'type', value: '!-rps <your choice>'}
+                            
+                        )
+                        message.channel.send(newEmbed);
+                    }
+                    if (args[0] == 'guess'){
+                        const newEmbed = new Discord.MessageEmbed()
+                        .setColor('#304281')
+                        .AddFields(
+                        {name: 'type', value: '!-guess <a number from 1 to 10>'}
+                        )
+                        message.channel.send(newEmbed);
+                    }
                 }
     
     
