@@ -174,7 +174,7 @@ let comp_val = rps[parseInt(comp_res)];
                         {name: 'Game1',value 'RPS'},
                         {name: 'Game2', value 'Guess'}
                     )
-                    .setFooter('if u want to know how ro use games command type !-help <command>')
+                    .setFooter('if u want to know how to know how use games command type !-help <command>');
                     message.channel.send(newEmbed);
                     
                 } else if (command == 'guess'){
