@@ -164,7 +164,20 @@ let comp_val = rps[parseInt(comp_res)];
                         message.channel.send(replies[random]);
                     }
                 } else if (command == 'game'){
-                    message.channel.send('which game you want to play /n only 1 game available now type !-guess and a number')
+                    message.channel.send('which game you want to play /n only 1 game available now type !-guess and a number from 1 to 10')
+                } else if (command == 'guess'){
+                    let numbers = ["1","2","3","4","5","6","7","8","9","10"];
+                    let random = Math.floor(Math.random() * numbers.length);
+                    if (!args[0]){
+                        message.channel.send("please enter a number");
+                    }
+                    if (args[0] == numbers[random]){
+                        message.channel.send(`correct number it was ${numbers[random]}`);
+                    }
+                    else if (args[0] != numbers[random]){
+                        message.channel.send(`wrong number it was ${numbers[random]}`);
+                    }
+                    
                 }
     
     
