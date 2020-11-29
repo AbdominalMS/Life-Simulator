@@ -166,7 +166,9 @@ let comp_val = rps[parseInt(comp_res)];
                 } else if (command == 'game'){
                     message.channel.send('which game you want to play /n only 1 game available now type !-guess and a number')
                 } else if (command == 'guess'){
-                    const number = mathion.createRand("1","10")
+                    numbers = ["1","2","3","4","5","6","7","8","9","10"];
+
+                    const number = mathion.randArray(numbers)
                     if (args[0] === number){
                         message.channel.send(`you won it was ${number}`)
                     }
