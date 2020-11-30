@@ -225,12 +225,13 @@ let comp_val = rps[parseInt(comp_res)];
                         );
                         message.channel.send(newEmbed);
                     }
-                    if (args[0] == 'guess'){
+                else if (args[0] == 'guess'){
                         const newEmbed = new Discord.MessageEmbed()
                         .setColor('#304281')
                         .setTitle('guess command')
                         .AddFields(
                         {name: 'type', value: '!-guess <a number from 1 to 10>'}
+                            
                         );
                         message.channel.send(newEmbed);
                     }
