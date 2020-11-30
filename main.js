@@ -224,17 +224,16 @@ let comp_val = rps[parseInt(comp_res)];
                             
                         );
                         message.channel.send(newEmbed);
-                    }
-                else if (args[0] == 'guess'){
-                        const newEmbed = new Discord.MessageEmbed()
+                    } else if (args[0] == 'guess'){
+                        const guessEmbed = new Discord.MessageEmbed()
                         .setColor('#304281')
-                        .setTitle('guess command')
-                        .AddFields(
-                        {name: 'type', value: '!-guess <a number from 1 to 10>'}
-                            
+                        .setTitle('Guess command')
+                        .addFields(
+                        {name: 'type', value: '!-guess <a number from 1 - 10>'}
                         );
-                        message.channel.send(newEmbed);
+                        message.channel.send(guessEmbed);
                     }
+              
                 }
     
     
