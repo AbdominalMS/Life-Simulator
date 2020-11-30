@@ -171,8 +171,8 @@ let comp_val = rps[parseInt(comp_res)];
                     .setTitle('Games')
                     .setDescription('choose a game')
                     .addFields(
-                        {name: 'Game1',value 'RPS'},
-                        {name: 'Game2', value 'Guess'}
+                        {name: 'Game1',value: 'RPS'},
+                        {name: 'Game2', value: 'Guess'}
                     )
                     .setFooter('if u want to know how to know how use games command type !-help <command>');
                     message.channel.send(newEmbed);
@@ -212,19 +212,23 @@ let comp_val = rps[parseInt(comp_res)];
         {name: 'message is:', value: _message}
     ) 
                     message.channel.send(newEmbed);
-                }  else if (command == 'help'){
+                } 
+    
+    else if (command == 'help'){
                     if (args[0] == 'rps'){
                         const newEmbed = new Discord.MessageEmbed()
                         .setColor('#304281')
+                        .setTitle('rps command')
                         .addFields(
                     {name: 'type', value: '!-rps <your choice>'}
                             
-                        )
+                        );
                         message.channel.send(newEmbed);
                     }
                     if (args[0] == 'guess'){
                         const newEmbed = new Discord.MessageEmbed()
                         .setColor('#304281')
+                        .setTitle('guess command')
                         .AddFields(
                         {name: 'type', value: '!-guess <a number from 1 to 10>'}
                         )
