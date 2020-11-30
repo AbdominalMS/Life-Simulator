@@ -231,7 +231,7 @@ let comp_val = rps[parseInt(comp_res)];
                         .setTitle('guess command')
                         .AddFields(
                         {name: 'type', value: '!-guess <a number from 1 to 10>'}
-                        )
+                        );
                         message.channel.send(newEmbed);
                     }
                 }
