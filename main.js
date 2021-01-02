@@ -180,7 +180,7 @@ let comp_val = rps[parseInt(comp_res)];
                 } else if (command == 'guess'){
                     let numbers = ["1","2","3","4","5","6","7","8","9","10"];
                     let random = Math.floor(Math.random() * numbers.length);
-                    if(args[0] <= 11){
+                    if(args[0] < 11){
                         message.channel.send('please choose number between 1 to 10!')
                     }
                     if (!args[0]){
