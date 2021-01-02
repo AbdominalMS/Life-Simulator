@@ -178,7 +178,7 @@ let comp_val = rps[parseInt(comp_res)];
                     message.channel.send(newEmbed);
                     
                 } else if (command == 'guess'){
-                    else if (command == 'guess'){
+                    
                     let numbers = ["1","2","3","4","5","6","7","8","9","10"];
                     let random = Math.floor(Math.random() * numbers.length);
                     if (!args[0]){
@@ -190,7 +190,7 @@ let comp_val = rps[parseInt(comp_res)];
                     else if (args[0] != numbers[random]){
                         message.channel.send(`wrong number it was ${numbers[random]}`);
                     } 
-                    }
+                    
                     else {
                         message.channel.send('Please Enter A number between 1 to 10');
                     }
