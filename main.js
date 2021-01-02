@@ -178,19 +178,18 @@ let comp_val = rps[parseInt(comp_res)];
                     message.channel.send(newEmbed);
                     
                 } else if (command == 'guess'){
+                    else if (command == 'guess'){
                     let numbers = ["1","2","3","4","5","6","7","8","9","10"];
-                    let valid = [...numbers];
                     let random = Math.floor(Math.random() * numbers.length);
-                    answer = args[0];
-                    if (answer == valid[0] || valid[1] || valid[2] || valid[3] || valid[4] || valid[5] || valid[6] || valid[7] || valid[8] || valid[9] ){
-                        if (!answer) message.channel.send('please enter a number')
-                        if (typeof(answer) === 'string') message.channel.send ('please Enter a number!')
-                        if (answer == numbers[random]){
-                            message.channel.send(`Correct Number it was ${numbers[random]}`)
-                        }
-                        else if (answer != numbers[random]){
-                            message.channel.send(`Wrong Number it was ${numbers[random]}`)
-                        }
+                    if (!args[0]){
+                        message.channel.send("please enter a number");
+                    }
+                    if (args[0] == numbers[random]){
+                        message.channel.send(`correct number it was ${numbers[random]}`);
+                    }
+                    else if (args[0] != numbers[random]){
+                        message.channel.send(`wrong number it was ${numbers[random]}`);
+                    } 
                     }
                     else {
                         message.channel.send('Please Enter A number between 1 to 10');
