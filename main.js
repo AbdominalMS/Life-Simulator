@@ -190,9 +190,10 @@ let comp_val = rps[parseInt(comp_res)];
                     }
                     if (answer == numbers[random]){
                         message.channel.send(`Correct it was ${numbers[random]}`);
-                    }
+                    } if (answer == numbers){
                     else if (answer != numbers[random]){
                         message.channel.send(`Wrong it was ${numbers[random]}`);
+                    }
                     }
                    
                     
