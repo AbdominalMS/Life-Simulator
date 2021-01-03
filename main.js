@@ -185,10 +185,13 @@ let comp_val = rps[parseInt(comp_res)];
                     if (!answer){
                         message.channel.send('please enter a number from 1 to 10!');
                     }
+                    if (typeof(answer) == 'string'){
+                        message.channel.send('please Enter a number between 1 - 10')
+                    }
                     if (answer == numbers[random]){
                         message.channel.send(`Correct it was ${numbers[random]}`);
                     }
-                    else if (answe != numbers[random]){
+                    else if (answer != numbers[random]){
                         message.channel.send(`Wrong it was ${numbers[random]}`);
                     }
                    
