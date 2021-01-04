@@ -183,7 +183,7 @@ let comp_val = rps[parseInt(comp_res)];
                    let random = Math.floor(Math.random() * numbers.length)
                    const answer = args[0];
                     
-                    if (answer === numbers[random]){
+                    if (answer == numbers[random]){
                         message.channel.send(`Correct it was ${numbers[random]}`);
                     }
                     else if (answer !== numbers[random]){
