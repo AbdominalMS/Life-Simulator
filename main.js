@@ -181,14 +181,11 @@ let comp_val = rps[parseInt(comp_res)];
                     
                   message.channel.send('starting after 5 sec..')
                     setTimeout(() => {
-                        message.channel.send('choose a number between 1 to 10')
-                         if (message.content == 1){
+                        message.channel.send('choose a number between 1 to 10')  
+                    },5000);
+                     if (message.content == 1){
                              message.channel.send('working')
                              }
-                             
-                          
-                          
-                    },5000);
                    
                     
                    
