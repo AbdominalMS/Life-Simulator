@@ -179,15 +179,16 @@ let comp_val = rps[parseInt(comp_res)];
                     
                 } else if (command == 'guess'){
                     
-                  message.channel.send('starting after 5 sec..')
-                    setTimeout(() => {
-                        message.channel.send('choose a number between 1 to 10')
-                        if (message.content == 1){
-                             message.channel.send('working')
-                             }
-                    },5000);
-                     
-                   
+                   let numbers = [1,2,3,4,5,6,7,8,9,10]
+                   let random = Math.floor(Math.random() * numbers.length)
+                   const answer = args[0];
+                    
+                    if (answer == numbers[random]){
+                        message.channel.send(`Correct it was ${numbers[random]}`);
+                    }
+                    else if (answer !== numbers[random]){
+                        message.channel.send(`Wrong it was ${numbers[random]}`);
+                    }
                     
                    
                     
