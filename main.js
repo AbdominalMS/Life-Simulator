@@ -182,16 +182,12 @@ let comp_val = rps[parseInt(comp_res)];
                   message.channel.send('starting after 5 sec..')
                     setTimeout(() => {
                         message.channel.send('choose a number between 1 to 10')
-                         if (message.content == `${Math.floor(Math.random() * 10) + 1}`){
-                           const rightEmbed = new Discord.MessageEmbed()
-  .setColor('DARK_GREEN')
-  .setTitle(`${message.author.username} got the right number!`)
-  .setTimestamp()
-  .setFooter('AbdominalMS');
- message.channel.send(rightEmbed);
- console.log(`${message.author.username} got the right number!`);
- channel.updateOverwrite(Member, { SEND_MESSAGES: false });
-                    }
+                         if (message.content == 1{
+                             message.channel.send('working')
+                             }
+                             
+                          
+                          
                     },5000);
                    
                     
