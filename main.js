@@ -243,7 +243,7 @@ let comp_val = rps[parseInt(comp_res)];
               
                 }
                 else if (command == 'hug'){
-                    if (message.mentions.members.first() == message.author){
+                    if (message.mentions.members.first() == message.author.id){
                         message.channel.send(`${message.author} sent a hug to ${message.mentions.memebers.first()} https://tenor.com/view/sailor-moon-black-lady-hug-self-anime-gif-15558731`)
                     }
                     else {
