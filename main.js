@@ -244,6 +244,9 @@ let comp_val = rps[parseInt(comp_res)];
                 }
                 else if (command == 'hug'){
                     message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()} https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016`);
+                    if (args[0] == 'self'){
+                        message.channel.send(`${message.author} set a hug to themselve`);
+                    }
                 }
     
     
