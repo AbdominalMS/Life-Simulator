@@ -245,10 +245,8 @@ let comp_val = rps[parseInt(comp_res)];
                 else if (command == 'hug'){
                    const newEmbed = new Discord.MessageEmbed()
                    .setColor('#304281')
-                   .setTitle(`${message.author} sent a hug to ${message.mentions.members.first()}`)
-                   .addFields(
-                       {name: 'Hug' , value: 'https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016'}
-                   )
+                   .setTitle(`${message.author.username} Sent a hug to ${message.mentions.members.first().user}`)
+                   message.channel.send(`${message.author} sent a hug to ${message.mentions.member.first()}`)
                     message.channel.send(newEmbed);
 
                 }
