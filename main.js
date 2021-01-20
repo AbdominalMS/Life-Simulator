@@ -246,7 +246,9 @@ let comp_val = rps[parseInt(comp_res)];
                     if (message.mentions.members.first() == message.author){
                         message.channel.send(`${message.author} sent a hug to ${message.mentions.memebers.first()} https://tenor.com/view/sailor-moon-black-lady-hug-self-anime-gif-15558731`)
                     }
+                    else {
                     message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()} https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016`);
+                    }
 
                 }
     
