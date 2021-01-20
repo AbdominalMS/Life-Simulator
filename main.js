@@ -242,6 +242,9 @@ let comp_val = rps[parseInt(comp_res)];
                     }
               
                 }
+                else if (command == 'hug'){
+                    message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()}`);
+                }
     
     
     
