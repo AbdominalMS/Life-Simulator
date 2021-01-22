@@ -244,10 +244,14 @@ let comp_val = rps[parseInt(comp_res)];
               
                 }
                 else if (command == 'hug'){
-                    message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()} https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016`);
+                    const hug = ['https://images-ext-1.discordapp.net/external/RamYa5u0Pzqr4_KwCMf0YNEF-vDTZGAhWEjHWVJ2bRs/https/cdn.weeb.sh/images/SywetdQvZ.gif','https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016']
+                    const random = Math.floor(Math.random() * hug.length)
+                    message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()} ${hug[random]}`);
                 }
                 else if (command == 'kill'){
-                    message.channel.send(`${message.author} Killed ${message.mentions.members.first()}  https://tenor.com/view/kill-smack-anime-gif-9955653`);
+                   const kill = ['https://tenor.com/view/fire-arm-fire-destroy-destruction-anime-gif-17223062','https://giphy.com/gifs/halloween-costumes-3oEduSQonFIXK55aQo','https://tenor.com/view/akame-ga-kill-anime-fight-shoot-girl-gif-17763115','https://tenor.com/view/kill-smack-anime-gif-9955653' ]
+                    const random = Math.floor(Math.random() * kill.length)
+                    message.channel.send(`${message.author} Killed ${message.mentions.members.first()}${kill[random]} `);
                 }
     
     
