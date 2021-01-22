@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
+
 const prefix = '!-';
 
 
@@ -244,6 +245,9 @@ let comp_val = rps[parseInt(comp_res)];
                 }
                 else if (command == 'hug'){
                     message.channel.send(`${message.author} sent a hug to ${message.mentions.members.first()} https://tenor.com/view/noragami-kofuku-daikoku-hugging-love-gif-14637016`);
+                }
+                else if (command == 'kill'){
+                    message.channel.send(`${message.author} Killed ${message.mentions.members.first()}  https://tenor.com/view/kill-smack-anime-gif-9955653`);
                 }
     
     
