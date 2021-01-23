@@ -252,12 +252,12 @@ let comp_val = rps[parseInt(comp_res)];
                    const kill = ['https://tenor.com/view/fire-arm-fire-destroy-destruction-anime-gif-17223062','https://giphy.com/gifs/halloween-costumes-3oEduSQonFIXK55aQo','https://tenor.com/view/akame-ga-kill-anime-fight-shoot-girl-gif-17763115','https://tenor.com/view/kill-smack-anime-gif-9955653' ]
                     const random = Math.floor(Math.random() * kill.length)
                     message.channel.send(`${message.author} Killed ${message.mentions.members.first()}${kill[random]} `);
+                } else if (command == 'pat'){
+                    const pat = ['https://tenor.com/view/anime-good-girl-pet-pat-gif-9200932','https://tenor.com/view/pat-cute-kawaii-anime-asterisk-gif-13792462','https://tenor.com/view/kanna-kamui-pat-head-pat-gif-12018819','https://tenor.com/view/anime-pat-smile-cute-blush-gif-16456868','https://tenor.com/view/charlotte-pat-blush-embarrassed-shy-gif-5081286','https://tenor.com/view/neet-anime-cute-kawaii-pat-gif-9332926'];
+                    const random = Math.floor(Math.random() * pat.length);
+                    message.channel.send(`${message.author} sent a pat to ${message.mentions.members.first()}${pat[random]}`)
                 }
-                else if (command == 'pat'){
-                    const pat = ['https://tenor.com/view/anime-good-girl-pet-pat-gif-9200932','https://tenor.com/view/pat-cute-kawaii-anime-asterisk-gif-13792462','https://tenor.com/view/kanna-kamui-pat-head-pat-gif-12018819','https://tenor.com/view/anime-pat-smile-cute-blush-gif-16456868','https://tenor.com/view/charlotte-pat-blush-embarrassed-shy-gif-5081286','https://tenor.com/view/neet-anime-cute-kawaii-pat-gif-9332926']
-                    const random = Math.floor(Math.random() * pat.length)
-                    message.channel.send(`${message.author} Sent a pat to ${message.mentions.memebers.first()} ${pat[random]}`)
-                }
+               
     
     
     
