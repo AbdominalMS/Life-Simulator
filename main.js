@@ -257,6 +257,17 @@ let comp_val = rps[parseInt(comp_res)];
                     const random = Math.floor(Math.random() * pat.length);
                     message.channel.send(`${message.author} sent a pat to ${message.mentions.members.first()}${pat[random]}`)
                 }
+                else if (command == 'friend'){
+                    if (!message.mentions.members.first()){
+                        message.channel.send('who you want to friends?!')
+                    }
+                    else if (message.mentions.members.first()){
+                    message.channel.send(`${message.author} Sent you friend request do you accept? ${message.mentions.members.first()}`)
+                }
+            }
+            if (message.content == 'yes'){
+                message.channel.send('Yay!!');
+            }
                
     
     
