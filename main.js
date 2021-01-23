@@ -253,6 +253,11 @@ let comp_val = rps[parseInt(comp_res)];
                     const random = Math.floor(Math.random() * kill.length)
                     message.channel.send(`${message.author} Killed ${message.mentions.members.first()}${kill[random]} `);
                 }
+                else if (command == 'pat'){
+                    const pat = ['https://tenor.com/view/anime-good-girl-pet-pat-gif-9200932','https://tenor.com/view/pat-cute-kawaii-anime-asterisk-gif-13792462','https://tenor.com/view/kanna-kamui-pat-head-pat-gif-12018819','https://tenor.com/view/anime-pat-smile-cute-blush-gif-16456868','https://tenor.com/view/charlotte-pat-blush-embarrassed-shy-gif-5081286','https://tenor.com/view/neet-anime-cute-kawaii-pat-gif-9332926']
+                    const random = Math.floor(Math.random() * pat.length)
+                    message.channel.send(`${message.author} Sent a pat to ${message.mentions.memebers.first()} ${pat[random]}`)
+                }
     
     
     
