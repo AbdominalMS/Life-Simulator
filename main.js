@@ -267,7 +267,7 @@ let comp_val = rps[parseInt(comp_res)];
             } else if (command == 'slap'){
             const slap = ['https://tenor.com/view/bunny-girl-slap-angry-girlfriend-anime-gif-15144612','https://tenor.com/view/girl-slap-anime-mad-student-gif-17423278','https://tenor.com/view/no-angry-anime-slap-gif-7355956','https://tenor.com/view/anime-slap-slap-in-the-face-smash-gif-17314633','https://tenor.com/view/anime-manga-japanese-anime-japanese-manga-toradora-gif-5373994','https://tenor.com/view/anime-slap-hit-hurt-angry-gif-12396060'];
                 const random = Math.floor(Math.random() * slap.length);
-                message.channel.send(`${message.author} Slapped you!! ${message.mentions.members.first()}${slap.random}`)
+                message.channel.send(`${message.author} Slapped you!! ${message.mentions.members.first()}${slap[random]}`)
             }   
 
             
