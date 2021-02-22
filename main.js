@@ -190,6 +190,7 @@ let comp_val = rps[parseInt(comp_res)];
                    if (isNaN(answer)){
                        message.channel.send('please enter a number between 1 -10')
                    } else {
+                       if (answer < 11){
 
                     if (answer == numbers[random]){
                         message.channel.send(`Correct it was ${numbers[random]}`);
@@ -198,6 +199,7 @@ let comp_val = rps[parseInt(comp_res)];
                         message.channel.send(`Wrong it was ${numbers[random]}`);
                     }
                     }
+                }
                     
                    
                     
