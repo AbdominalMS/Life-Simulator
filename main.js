@@ -283,6 +283,7 @@ let comp_val = rps[parseInt(comp_res)];
             message.channel.send(`${message.author} Punch!! ${message.mentions.members.first()}${punch[random]}`)
                 
             } else if (command == 'dm'){
+                const user = message.author;
                 user.send('ok');
             }
 
