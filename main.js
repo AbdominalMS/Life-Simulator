@@ -129,7 +129,7 @@ let comp_val = rps[parseInt(comp_res)];
                 },1000)
                 setTimeout(() => {
                     message.delete()
-                })
+                },2000)
             }
         } 
           else if (command == 'love'){
