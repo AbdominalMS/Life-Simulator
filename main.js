@@ -127,6 +127,9 @@ let comp_val = rps[parseInt(comp_res)];
                 setTimeout(() =>{
                     message.channel.send(`${deleted}Messages Deleted`)
                 },1000)
+                setTimeout(() => {
+                    message.delete()
+                })
             }
         } 
           else if (command == 'love'){
@@ -279,6 +282,8 @@ let comp_val = rps[parseInt(comp_res)];
             const random = Math.floor(Math.random() * punch.length);
             message.channel.send(`${message.author} Punch!! ${message.mentions.members.first()}${punch[random]}`)
                 
+            } else if (command == 'dm'){
+                user.send('ok');
             }
 
             
