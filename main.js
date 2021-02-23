@@ -290,7 +290,7 @@ let comp_val = rps[parseInt(comp_res)];
                 user.send('ok');
                 }
                 if (mention){
-                    const send = args.splice(mention).join(" ");
+                    const send = args.join(" ");
                     if (!send){
                         message.channel.send(`what you want to send to ${mention}`);
                     }
