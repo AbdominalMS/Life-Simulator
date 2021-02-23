@@ -284,7 +284,20 @@ let comp_val = rps[parseInt(comp_res)];
                 
             } else if (command == 'dm'){
                 const user = message.author;
+                const mention = message.mentions.members.first();
+                if (!mention){
+                    message.channel.send('Done!')
                 user.send('ok');
+                }
+                if (mention){
+                    const send = args.join(" ")
+                    if (!send){
+                        message.channel.send(`what you want to send to ${mention}`);
+                    }
+                    if (send){
+                         mention.send(`${user} send you this "${send}"`)
+                    }
+                }
             }
 
             
