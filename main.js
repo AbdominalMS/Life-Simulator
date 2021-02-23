@@ -296,7 +296,7 @@ let comp_val = rps[parseInt(comp_res)];
                     }
                     if (send){
                         const without = send.split(mention)
-                         mention.send(`${user} send you this "${}"`)
+                         mention.send(`${user} send you this "${without}"`)
                     }
                 }
             }
