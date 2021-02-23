@@ -295,8 +295,8 @@ let comp_val = rps[parseInt(comp_res)];
                         message.channel.send(`what you want to send to ${mention}`);
                     }
                     if (send){
-                        const without = send.slice(send.length)
-                         mention.send(`${user} send you this "${without}"`)
+                        const without = send.split(mention)
+                         mention.send(`${user} send you this "${}"`)
                     }
                 }
             }
